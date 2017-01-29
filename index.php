@@ -16,7 +16,7 @@ if(!(isset($_SESSION['varname'])))
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>E-Billing</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,16 @@ if(!(isset($_SESSION['varname'])))
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
     <![endif]-->
+    <!-- Invalid credentials hashing-->
+    <script>
+	$(function() {
+    var hash = window.location.hash;
+
+    // do some validation on the hash here
+
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+});
+	</script>
 
 </head>
 

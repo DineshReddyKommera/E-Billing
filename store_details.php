@@ -5,6 +5,7 @@ $uname = $_SESSION['varname'];
 $cname=$_GET['cname'];
 $cno=$_GET['cno'];
 $prods=$_GET['products'];
+$total=$_GET['total'];
 //$uname=$_GET['uname'];
 $date= date("Y-m-d");
 
@@ -17,8 +18,8 @@ VALUES ('', '$cname', '$cno')";
 }
 
 
-$sql = "INSERT INTO transactions (trans_id,trans_date,prod_names,c_no,uname)
-VALUES ('', '$date', '$prods', '$cno', '$uname')";
+$sql = "INSERT INTO transactions (trans_id,trans_date,prod_names,c_no,cost,uname)
+VALUES ('', '$date', '$prods', '$cno', '$total', '$uname')";
  if ($conn->query($sql) === TRUE){
 	 header("location:dashboard.php");
  }

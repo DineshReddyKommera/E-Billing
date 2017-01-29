@@ -16,7 +16,7 @@ if($_SESSION['varname'] != NULL)
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -94,8 +94,9 @@ if($_SESSION['varname'] != NULL)
 	//to store values in database from bill
 	function store(){
 		window.print() ;
-		var w=document.getElementById("cname").value;
+		var w= document.getElementById("cname").value;
 		var x= document.getElementById("cno").value;
+		var z= sum;
 		var element = document.getElementsByClassName("product");
 		var y=[];
         for(var i=0;i<element.length;i++)
@@ -105,7 +106,7 @@ if($_SESSION['varname'] != NULL)
         }
         //alert(y);
 		
-		location.href= "store_details.php?cname="+w+"&cno="+x+"&products="+y+"";
+		location.href= "store_details.php?cname="+w+"&cno="+x+"&total="+z+"&products="+y+"";
 	}
 	
 	</script>
@@ -177,12 +178,22 @@ if($_SESSION['varname'] != NULL)
     </div>
     <br>
     <!--User identity and details-->
+    <?php
+include("connect.php");
+
+$sql = "SELECT * FROM user_details WHERE uname='$uname'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) 	
+    // output data of each row
+	$row = $result->fetch_assoc()
+	?>
     <br>
     <br>
  	<div class="col-lg-12" id="Identity" style="font-size:20px;">
     	
         <div class="col-sm-6" id="address">
-            <strong>1-1-308/88<br> Power House Groceries <br> +91 9879872442</strong>
+            <strong><?php echo $row["address"];?><br><?php echo $row["org"];?> <br> +91 <?php echo $row["mobile"];?></strong>
         </div>
         
         <div class="col-sm-6" id="details">
