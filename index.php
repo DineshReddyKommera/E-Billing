@@ -152,10 +152,10 @@ if(!(isset($_SESSION['varname'])))
                               
                            </div>
                            <div id="reg" class="tab-pane fade">
-                              <form role="form" action="register.php" method="post" style="padding:20px;">
+                              <form role="form" action="register.php" method="post" style="padding:20px;" name="registration">
                                  <div class="form-group">
                                     <label for="uname">Username:</label>
-                                    <input type="text" name="uname" class="form-control" placeholder="Enter Username" style="background:none;">
+                                    <input type="text" name="uname" class="form-control" placeholder="Enter Username" style="background:none;" required>
                                  </div>
                                  <div class="form-group">
                                     <label for="fname">Firstname:</label>
@@ -537,7 +537,9 @@ if(!(isset($_SESSION['varname'])))
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
-
+	<script src=" https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+	<script src=" https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script src="js/form-validation.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
